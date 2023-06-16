@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "module": "ES2022",
+      "esModuleInterop": true,
+      "target": "es2017",
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "./dist",
+        "allowImportingTsExtensions": true,
+    },
+    "lib": ["es2017"],
+    "ts-node": {
+      "esm": true,
+      "experimentalSpecifierResolution": "node"
+    },
+}
