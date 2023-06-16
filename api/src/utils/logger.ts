@@ -15,7 +15,7 @@ class Logger {
             console.log(`[${LogTypes[level].toUpperCase()}] ${getDateAndTime()} : ${message} `);
         }else {
             if (level === LogTypes.info) {
-                console.log(`[INFO] ${getDateAndTime()} ${message}`)
+                console.log(`[INFO] ${getDateAndTime()}: ${message}`)
             }
         }
     }
