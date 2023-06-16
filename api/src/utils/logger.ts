@@ -3,15 +3,20 @@ import {getDateAndTime} from "../data/DateAndTime.ts";
 
 class Logger {
 
+
     private verbosity: LogTypes;
-    constructor(verbosity: LogTypes = LogTypes.info) {
+    constructor(verbosity: LogTypes = LogTypes.verbose) {
         this.verbosity = verbosity;
 
     }
 
     private log(level: LogTypes, message: string):void {
-        if(this.verbosity >= level){
+        if(this.verbosity <= level){
             console.log(`[${LogTypes[level].toUpperCase()}] ${getDateAndTime()} : ${message} `);
+        }else {
+            if (level === LogTypes.info) {
+                console.log(`[INFO] ${getDateAndTime()} ${message}`)
+            }
         }
     }
 

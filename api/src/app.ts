@@ -40,7 +40,11 @@ export default class App {
         //confirms port listening (will be adjusted later on to work correctly for application)
        this.express.listen(PORT, () => {
            this.logger.info(`listening on port ${PORT}`);
-
+           //this.logger.debug(`debug`);
+           //this.logger.verbose(`verbose`)
+           //this.logger.warn(`warn`)
+           //this.logger.error(`error`)
+            //this is just for logger testing keeping it for now as i play with verbosity
        });
 
        //undefined route handling
