@@ -45,3 +45,8 @@ export const logTypeData: {[key in LogTypes]: ILogTypeData} ={
         bgColour:"",
     },
 }
+
+class getLoggerStyling {
+
+
+}

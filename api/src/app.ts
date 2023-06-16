@@ -1,18 +1,32 @@
 import Express from "express"
-import logger from "./utils/logger.ts";
-import {LogTypes} from "./data/LogData.ts";
+import Logger from "./utils/logger.ts";
+import dotenv from "dotenv"
+
+
+
+dotenv.config();
+
+
+
+const {
+   PORT
+        } = process.env
+
 
 export default class App {
     public express: Express.Application;
-    public logger: logger;
+    public logger: Logger;
 
-   // const logger = new logger(LogTypes.info);
+
     constructor() {
         this.express = Express();
+        this.Routes()
+        this.logger = new Logger();
+
     }
 
     public async Init() {
-    this.Routes();
+
     }
 
     private Middleware(): void {
@@ -24,22 +38,22 @@ export default class App {
             res.send('this is a twitch bot!')
         });
         //confirms port listening (will be adjusted later on to work correctly for application)
-       this.express.listen(3000, () => {
-             this.logger.info('listening on port 3000');
-            });
+       this.express.listen(PORT, () => {
+           this.logger.info(`listening on port ${PORT}`);
+
+       });
 
        //undefined route handling
         this.express.use('*', (req, res, next) => {
             res.send("Please ensure that the url is correct.");
         });
 
-        }
+    }
 
 
 
 
 
 }
-const app = new App();
-app.Init()
+
 

@@ -1,5 +1,5 @@
 import {LogTypes} from "../data/LogData.ts";
-import {DateAndTime} from "../data/DateAndTime.ts";
+import {getDateAndTime} from "../data/DateAndTime.ts";
 
 class Logger {
 
@@ -11,7 +11,7 @@ class Logger {
 
     private log(level: LogTypes, message: string):void {
         if(this.verbosity >= level){
-            console.log(`[|${LogTypes[level].toUpperCase()}] ${DateAndTime} : ${message} `);
+            console.log(`[${LogTypes[level].toUpperCase()}] ${getDateAndTime()} : ${message} `);
         }
     }
 

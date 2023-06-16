@@ -1,4 +1,3 @@
-export function DateAndTime(): string {
-    const currDateAndTime = new Date();
-    return currDateAndTime.toISOString();
+export const getDateAndTime = (): string => {
+    return new Date().toISOString();
 }
