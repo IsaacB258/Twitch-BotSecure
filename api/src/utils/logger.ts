@@ -21,7 +21,7 @@ class Logger {
            console.log(` [${getKeyedColours[level]}] ${Reset} ${getDateAndTime()} : ${message} `);
 
         } else if (level === LogTypes.info) {
-            console.log(`[INFO] ${getDateAndTime()}: ${message}`)
+            console.log(`[${getKeyedColours}] ${getDateAndTime()}: ${message}`)
         }
     }
 
@@ -45,6 +45,6 @@ class Logger {
         this.log(LogTypes.error, message);
     }
 }
-//console.log(`verbosity = ${verbosity}, LogTypes= ${LogTypes}`)
+
 
 export default Logger;

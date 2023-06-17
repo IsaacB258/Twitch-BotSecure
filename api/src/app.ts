@@ -37,7 +37,7 @@ export default class App {
         this.express.get('/', (req, res) => {
             res.send('this is a twitch bot!')
         });
-        //confirms port listening (will be adjusted later on to work correctly for application)
+        
        this.express.listen(PORT, () => {
            this.logger.info(`listening on port ${PORT}`);
            this.logger.debug(`debug`);
