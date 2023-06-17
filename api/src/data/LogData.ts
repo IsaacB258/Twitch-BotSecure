@@ -1,3 +1,5 @@
+import Colors from "ansi-colors";
+
 export enum LogTypes{
     info = -1,
     debug = 0,
@@ -5,48 +7,23 @@ export enum LogTypes{
     warn = 2,
     error= 3,
 }
- export interface ILogTypeData {
-    name: string;
-    label: string ;
-    fgColour: string;
-    bgColour: string;
-}
-export const logTypeData: {[key in LogTypes]: ILogTypeData} ={
-    [LogTypes.info]: {
-        name: "info",
-        label: "info",
-        fgColour: "#51f70a",
-        bgColour: "",
-    },
-    [LogTypes.debug]: {
-        name:"debug",
-        label: "debug",
-        fgColour:"#ffffff",
-        bgColour:"",
-    },
-    [LogTypes.verbose]: {
-        name: "verbose",
-        label: "verbose",
-        fgColour:"#fff305",
-        bgColour:"",
-    },
-    [LogTypes.warn]: {
-        name:"warn",
-        label: "warn",
-        fgColour: "#ff9305",
-        bgColour:"",
+
+export const Reset = "\u001b[0m";
 
 
-    },
-    [LogTypes.error]: {
-        name:"error",
-        label:"error",
-        fgColour:"#ff0505",
-        bgColour:"",
-    },
-}
+export const getKeyedColours ={
 
-class getLoggerStyling {
+    "-1": Colors.bold.white("INFO"),
+    "0": Colors.bold.green("DEBUG"),
+    "1":Colors.bold.blue("VERBOSE"),
+
+    "2":Colors.bold.yellow("WARN"),
+    "3":Colors.bold.red("ERROR")
 
 
 }
+
+
+
+
+
